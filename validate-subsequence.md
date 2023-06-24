@@ -5,9 +5,9 @@ Given 2 non-empty arrays of integers, write a function that determines whether t
 
 ## Optimized Approach
 
-You can follow the brute-force approach of travering through each element of both the arrays and comparing them. However, this would result in O(n^2) of time complexity. Hence, we have to look for other alternatives to approach this problem. So the first thing that comes up in your mind is that 'How can I loop through only one of the arrays?'.
+You can follow the brute-force approach of travering through each element of the 1st array and comparing it with each element of the 2nd array (nested for loops). However, this would result in O(n^2) of time complexity. Hence, we have to look for other alternatives to approach this problem. So the first thing that comes up in your mind is that 'How can I loop through only one of the arrays?'.
 
-This question makes it clear that only looping through the main array would result in O(n) time complexity. What about the subsequence array?
+This question makes it clear that only looping through the main array would result in O(n) time complexity. What about the subsequence array? Since the purpose here is to determine whether the second array is a subsequence of the first array, all you need to do is compare elements from the 1st array to elements from the second array simultaneously. This is remarkably better than the brute-force approach of taking 1 element of the first array and comparing it with each element of the second array. 
 
 ```python
 def twoNumberSum(array, targetSum):
