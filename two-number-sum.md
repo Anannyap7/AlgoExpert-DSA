@@ -5,6 +5,9 @@ Given an array of distinct integers and an integer representing the target sum, 
 
 ## Approach-1: Brute Force
 
+This approach traverses an array of size 'n' n times. That is, for each element in the array, we are iterating through the rest of the array in order to find the required target sum.
+Since the result array is of a fixed size (2) and we are not initializing any array of size = size of input array; therefore, space complexity remains O(1).
+
 ```python
 def twoNumberSum(array, targetSum):
   result = []
@@ -15,8 +18,6 @@ def twoNumberSum(array, targetSum):
         result.append(array[j])
   return result
   ```
-This approach traverses an array of size 'n' n times. That is, for each element in the array, we are iterating through the rest of the array in order to find the required target sum.
-Since the result array is of a fixed size (2) and we are not initializing any array of size = size of input array; the space complexity remains O(1).
 
 ### Complexity Analysis: 
 1. Time Complexity: O(n^2) where 'n' is the size of the array
