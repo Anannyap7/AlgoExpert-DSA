@@ -1,0 +1,48 @@
+# TWO NUMBER SUM
+
+## Understanding the problem
+Given an array of distinct integers and an integer representing the target sum, find 2 distinct integers from the array which equate to the target sum and return them in an array. If no two numbers sum up to the target sum, then return an empty array.
+
+## Approach-1: Brute Force
+
+```python
+def twoNumberSum(array, targetSum):
+  result = []
+  for i in range(len(array)):  # O(n)
+    for j in range(i+1, len(array)):  # O(n)
+      if array[i] + array[j] == targetSum:
+        result.append(array[i])
+        result.append(array[j])
+  return result
+  ```
+This approach traverses an array of size 'n' n times. That is, for each element in the array, we are iterating through the rest of the array in order to find the required target sum.
+Since the result array is of a fixed size (2) and we are not initializing any array of size = size of input array; the space complexity remains O(1).
+
+### Complexity Analysis: 
+1. Time Complexity: O(n^2) where 'n' is the size of the array
+2. Space Complexity: O(1)
+
+## Approach-2: Optimized approach using hashtables
+
+Instead of using brute-force, it is always better to think of mathematics based alternatives. In this case, think of approaching the problem logically: how would you find y given x+y = sum?
+To put it simply, y = sum - x. We have established our logic. Now our next aim is to reduce the time complexity from O(n^2) -> O(n), which can be done using hashtables. In the brute-force approach, the repeated search for each numbers complement takes O(n^2) time; however, searching in hashtables corresponds to a constant complexity as opposed to searching in lists (O(n)). So, the final time complexity is O(n) * O(1): Traversing through the array to create hashtable * searching in hashtable.
+
+**Algorithm:**
+1. Create an empty hashtable and store key-value pairs as x : targetSum - x.
+2. Check if the complement (= targetSum - x) of each number is also present in our hashtable. 
+3. There is one last condition to be met: 2 numbers should be distinct. In order to ensure that the complement is not the current number itself, we put another condition in the 'if' statement stating our requirements.
+
+```python
+def twoNumberSum(array, targetSum):
+  hashtable = {}
+  for x in array:  # O(n)
+    hastable[x] = targetSum - x
+    y = hashtable.get(targetSum - x)  # O(1)
+    if y != None and targetSum - x != x:  # O(1)
+      return [x, hashtable[x]]
+  return []
+```
+
+### Complexity Analysis:
+1. Time Complexity: O(n) where 'n' is the size of the array
+2. Space Complexity: O(n)
