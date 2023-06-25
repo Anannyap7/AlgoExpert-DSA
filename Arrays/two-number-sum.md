@@ -26,9 +26,9 @@ def twoNumberSum(array, targetSum):
 ## Approach-2: Optimized approach using hashtables
 
 Instead of using brute-force, it is always better to think of ```mathematics-based``` alternatives. In this case, think of approaching the problem logically: how would you find y given x+y = sum?
-To put it simply, ```y = sum - x```. We have established our logic. Now our next aim is to reduce the time complexity from O(n^2) -> O(n), which can be done using hashtables. In the brute-force approach, the repeated iteration on the same array for each numbers complement takes O(n^2) time; however, storing key-value pairs ```(number : complement)``` in a hashtable ensures that we loop through the array only once (O(n)). Additionally, searching in hashtable takes constant time as opposed to searching in a list. So, the final time complexity is ```O(n) * O(1)```.
+To put it simply, ```y = sum - x```. We have established our logic. Now our next aim is to reduce the time complexity from O(n^2) -> O(n), which can be done using hashtables. In the brute-force approach, the repeated iteration on the same array for each numbers complement takes O(n^2) time; however, storing key-value pairs ```(number : complement)``` in a hashtable ensures that we loop through the array only once (O(n)). Additionally, searching in hashtable takes constant time as opposed to searching in a list. So, the final time complexity is **O(n) * O(1)**.
 
-**Algorithm:**
+### Algorithm:
 1. Create an empty hashtable and store key-value pairs as ```x : targetSum - x```.
 2. Check if the complement (= targetSum - x) of each number is present as a key in our hashtable. This would mean that the complement is a part of the main array and not just any random number.
 3. There is one last condition to be met: 2 numbers should be distinct. Add a condition to ensure that the complement is not the current number.
