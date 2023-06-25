@@ -5,46 +5,26 @@ Given 2 non-empty arrays of integers, write a function that determines whether t
 
 ## Optimized Approach
 
-You can follow the brute-force approach of travering through each element of the 1st array and comparing it with each element of the 2nd array (nested for loops). However, this would result in O(n^2) of time complexity. Hence, we have to look for other alternatives to approach this problem. So the first thing that comes up in your mind is that 'How can I loop through only one of the arrays?'.
+You can follow the brute-force approach of travering through each element of the 1st array and comparing it with each element of the 2nd array (nested for loops). However, this would result in O(n^2) of time complexity. Hence, we have to look for other alternatives to approach this problem. It is clear that to reduce the time complexity to O(n), we need to loop through each element of both the arrays only once. Since the purpose here is to determine whether the second array is a subsequence of the first array, all you need to do is compare elements from the 1st array to elements from the second array simultaneously. This is remarkably better than the brute-force approach.
 
-This question makes it clear that only looping through the main array would result in O(n) time complexity. What about the subsequence array? Since the purpose here is to determine whether the second array is a subsequence of the first array, all you need to do is compare elements from the 1st array to elements from the second array simultaneously. This is remarkably better than the brute-force approach of taking 1 element of the first array and comparing it with each element of the second array. 
+**Algorithm:**
+1. Initialize a variable to keep track of the number of coinciding elements: ```count = 0```
+2. Iterate through the main array and compare elements from the main array with elements from the sub-array using ```count``` as an iterator: ```array[i] with sequence[count]```.
+3. If the values are equal, increase the ```count```.
+4. If not, then continue iterating through the elements of the main array until you find an element which is also present in the sub-array.
+5. Return ```True``` if the value of ```count``` equals to the length of the array and ```False``` otherwise. ```True``` means that all the elements of the sub-array are present in the main-array sequentially.
 
 ```python
-def twoNumberSum(array, targetSum):
-  result = []
+def isValidSubsequence(array, sequence):
+  count = 0
   for i in range(len(array)):  # O(n)
-    for j in range(i+1, len(array)):  # O(n)
-      if array[i] + array[j] == targetSum:
-        result.append(array[i])
-        result.append(array[j])
-  return result
+    if array[i] == sequence[count]:  # O(n)
+      count += 1
+    if count == len(subsequence):  # to stop looping as count value > last index of sub-array (after looping through the sub-array)
+      return True
+  return False
   ```
 
 ### Complexity Analysis: 
-1. Time Complexity: O(n^2) where 'n' is the size of the array
-2. Space Complexity: O(1)
-
-## Approach-2: Optimized approach using hashtables
-
-Instead of using brute-force, it is always better to think of mathematics based alternatives. In this case, think of approaching the problem logically: how would you find y given x+y = sum?
-To put it simply, y = sum - x. We have established our logic. Now our next aim is to reduce the time complexity from O(n^2) -> O(n), which can be done using hashtables. In the brute-force approach, the repeated search for each numbers complement takes O(n^2) time; however, searching in hashtables corresponds to a constant complexity as opposed to searching in lists (O(n)). So, the final time complexity is O(n) * O(1): Traversing through the array to create hashtable * searching in hashtable.
-
-**Algorithm:**
-1. Create an empty hashtable and store key-value pairs as x : targetSum - x.
-2. Check if the complement (= targetSum - x) of each number is also present in our hashtable. 
-3. There is one last condition to be met: 2 numbers should be distinct. In order to ensure that the complement is not the current number itself, we put another condition in the 'if' statement stating our requirements.
-
-```python
-def twoNumberSum(array, targetSum):
-  hashtable = {}
-  for x in array:  # O(n)
-    hastable[x] = targetSum - x
-    y = hashtable.get(targetSum - x)  # O(1)
-    if y != None and targetSum - x != x:  # O(1)
-      return [x, hashtable[x]]
-  return []
-```
-
-### Complexity Analysis:
-1. Time Complexity: O(n) where 'n' is the size of the array
-2. Space Complexity: O(n)
+1. Time Complexity: O(n) -> main array + O(n) -> sub-array = ```O(2n) ~ O(n)``` where 'n' is the size of the main array
+2. Space Complexity: ```O(1)``` for counter variable
