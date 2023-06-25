@@ -14,6 +14,7 @@ You can follow the **brute-force approach** of travering through each element of
 4. If not, then continue iterating through the elements of the main array until you find an element which is also present in the sub-array.
 5. Return ```True``` if the value of ```count``` equals to the length of the array and ```False``` otherwise. ```True``` means that all the elements of the sub-array are present in the main-array sequentially.
 
+### Python Implementation
 ```python
 def isValidSubsequence(array, sequence):
   count = 0
