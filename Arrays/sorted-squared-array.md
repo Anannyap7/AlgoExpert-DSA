@@ -20,6 +20,7 @@ Since the given array is already sorted, we can use **left and right pointers** 
 7. Continue steps 3-6 till the right pointer crosses the left pointer.
 8. Return the resulting array.
 
+### Python Implementation
 ```python
 import math
 
