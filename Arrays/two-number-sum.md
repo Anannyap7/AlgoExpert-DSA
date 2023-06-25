@@ -8,6 +8,7 @@ Given an array of distinct integers and an integer representing the target sum, 
 This approach traverses an array of size 'n' n times. That is, for each element in the array, we are iterating through the rest of the array in order to find the required target sum.
 Since we are only initializing a result array of fized size 2, therefore space complexity remains O(1).
 
+### Python Implementation:
 ```python
 def twoNumberSum(array, targetSum):
   result = []
@@ -33,6 +34,7 @@ To put it simply, ```y = sum - x```. We have established our logic. Now our next
 2. Check if the complement (= targetSum - x) of each number is present as a key in our hashtable. This would mean that the complement is a part of the main array and not just any random number.
 3. There is one last condition to be met: 2 numbers should be distinct. Add a condition to ensure that the complement is not the current number.
 
+### Python Implementation:
 ```python
 def twoNumberSum(array, targetSum):
   hashtable = {}
