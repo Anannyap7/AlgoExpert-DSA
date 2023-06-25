@@ -6,7 +6,7 @@ Given an array of distinct integers and an integer representing the target sum, 
 ## Approach-1: Brute Force
 
 This approach traverses an array of size 'n' n times. That is, for each element in the array, we are iterating through the rest of the array in order to find the required target sum.
-Since the result array is of a fixed size (2) and we are not initializing any array of size = size of input array; therefore, space complexity remains O(1).
+Since we are only initializing a result array of fized size 2, therefore space complexity remains O(1).
 
 ```python
 def twoNumberSum(array, targetSum):
@@ -20,18 +20,18 @@ def twoNumberSum(array, targetSum):
   ```
 
 ### Complexity Analysis: 
-1. Time Complexity: O(n^2) where 'n' is the size of the array
-2. Space Complexity: O(1)
+1. Time Complexity: ```O(n^2)``` where 'n' is the size of the array
+2. Space Complexity: ```O(1)```
 
 ## Approach-2: Optimized approach using hashtables
 
-Instead of using brute-force, it is always better to think of mathematics based alternatives. In this case, think of approaching the problem logically: how would you find y given x+y = sum?
-To put it simply, y = sum - x. We have established our logic. Now our next aim is to reduce the time complexity from O(n^2) -> O(n), which can be done using hashtables. In the brute-force approach, the repeated search for each numbers complement takes O(n^2) time; however, searching in hashtables corresponds to a constant complexity as opposed to searching in lists (O(n)). So, the final time complexity is O(n) * O(1): Traversing through the array to create hashtable * searching in hashtable.
+Instead of using brute-force, it is always better to think of ```mathematics-based``` alternatives. In this case, think of approaching the problem logically: how would you find y given x+y = sum?
+To put it simply, ```y = sum - x```. We have established our logic. Now our next aim is to reduce the time complexity from O(n^2) -> O(n), which can be done using hashtables. In the brute-force approach, the repeated iteration on the same array for each numbers complement takes O(n^2) time; however, storing key-value pairs ```(number : complement)``` in a hashtable ensures that we loop through the array only once (O(n)). Additionally, searching in hashtable takes constant time as opposed to searching in a list. So, the final time complexity is ```O(n) * O(1)```.
 
 **Algorithm:**
-1. Create an empty hashtable and store key-value pairs as x : targetSum - x.
-2. Check if the complement (= targetSum - x) of each number is also present in our hashtable. 
-3. There is one last condition to be met: 2 numbers should be distinct. In order to ensure that the complement is not the current number itself, we put another condition in the 'if' statement stating our requirements.
+1. Create an empty hashtable and store key-value pairs as ```x : targetSum - x```.
+2. Check if the complement (= targetSum - x) of each number is present as a key in our hashtable. This would mean that the complement is a part of the main array and not just any random number.
+3. There is one last condition to be met: 2 numbers should be distinct. Add a condition to ensure that the complement is not the current number.
 
 ```python
 def twoNumberSum(array, targetSum):
@@ -45,5 +45,5 @@ def twoNumberSum(array, targetSum):
 ```
 
 ### Complexity Analysis:
-1. Time Complexity: O(n) where 'n' is the size of the array
-2. Space Complexity: O(n)
+1. Time Complexity: O(n) * O(1) = ```O(n)``` where 'n' is the size of the array.
+2. Space Complexity: ```O(n)``` due to hashtable initialization.
