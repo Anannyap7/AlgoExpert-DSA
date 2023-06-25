@@ -5,9 +5,9 @@ Given 2 non-empty arrays of integers, write a function that determines whether t
 
 ## Optimized Approach
 
-You can follow the brute-force approach of travering through each element of the 1st array and comparing it with each element of the 2nd array (nested for loops). However, this would result in O(n^2) of time complexity. Hence, we have to look for other alternatives to approach this problem. It is clear that to reduce the time complexity to O(n), we need to loop through each element of both the arrays only once. Since the purpose here is to determine whether the second array is a subsequence of the first array, all you need to do is compare elements from the 1st array to elements from the second array simultaneously. This is remarkably better than the brute-force approach.
+You can follow the **brute-force approach** of travering through each element of the 1st array and comparing it with each element of the 2nd array (nested for loops). However, this would result in **O(n^2)** of time complexity. Hence, we have to look for other alternatives to approach this problem. It is clear that to reduce the time complexity to **O(n)**, we need to loop through each element of both the arrays only once. Since the purpose here is to determine whether the second array is a subsequence of the first array, all you need to do is **compare elements from the 1st array to elements from the second array simultaneously**. This is remarkably better than the brute-force approach.
 
-**Algorithm:**
+### Algorithm:
 1. Initialize a variable to keep track of the number of coinciding elements: ```count = 0```
 2. Iterate through the main array and compare elements from the main array with elements from the sub-array using ```count``` as an iterator: ```array[i] with sequence[count]```.
 3. If the values are equal, increase the ```count```.
