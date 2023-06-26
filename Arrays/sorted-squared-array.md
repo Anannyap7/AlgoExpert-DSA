@@ -10,8 +10,6 @@ This is not a straight-forward problem where you can simply square all the eleme
 The **brute-force approach** of adding the squared integers from the main array to the new array and sorting the array (timsort) would take **O(n) + O(nlogn)** time complexity. But, we can still reduce the time complexity and make this algorithm more efficient.
 Since the given array is already sorted, we can use **left and right pointers** at the start and end of the array to solve this problem. Using pointers would ensure traversal through the array once which would result in **O(n)** time complexity.
 
-<u>**Try to think how the use of 2 pointers moving in opposite directions can help reduce time complexity in a sorted array**</u>
-
 ### Algorithm:
 1. Initialize left and right pointers/variables at the start and end of the main array and create an empty array: ```left = 0 and right = len(array)-1```
 2. Initialize another variable to keep track of the position of the element to be inserted at the end of the result array: ```pos = len(array)-1```
@@ -43,7 +41,10 @@ def sortedSquaredArray(array):
 
   retrun result
 ```
-
 ### Complexity Analysis:
 1. Time Complexity: ```O(n)``` where 'n' is the size of the given array.
 2. Space Complexity: ```O(n)``` for creating and storing the resulting array.
+
+## Key Takeaways:
+1. If an array of positive and negative numbers are sorted, the biggest even power of elements inside this array will either be in the start or beginning of the array, depending on their absolute values. Use this concept to recursively update the start and end pointer comparisons.
+2. Try to think if using two pointers instead of one within a sorted array, moving in different directions can reduce time complexity.
