@@ -1,4 +1,4 @@
-# VALIDATING SUBSEQUENCE
+# Validating Subsequence
 
 ## Understanding the problem
 Given 2 non-empty arrays of integers, write a function that determines whether the second array is a subsequence of the first array. A subsequence of an array is a set of numbers in the array which are not necessarily adjacent in the array but they are in the same order as they appear in the array.
