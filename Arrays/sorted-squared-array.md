@@ -10,7 +10,7 @@ This is not a straight-forward problem where you can simply square all the eleme
 The **brute-force approach** of adding the squared integers from the main array to the new array and sorting the array (timsort) would take **O(n) + O(nlogn)** time complexity. But, we can still reduce the time complexity and make this algorithm more efficient.
 Since the given array is already sorted, we can use **left and right pointers** at the start and end of the array to solve this problem. Using pointers would ensure traversal through the array once which would result in **O(n)** time complexity.
 
---**Try to think how the use of 2 pointers moving in opposite directions can help reduce time complexity in a sorted array**-- 
+<u>**Try to think how the use of 2 pointers moving in opposite directions can help reduce time complexity in a sorted array**</u>
 
 ### Algorithm:
 1. Initialize left and right pointers/variables at the start and end of the main array and create an empty array: ```left = 0 and right = len(array)-1```
