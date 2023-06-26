@@ -29,3 +29,6 @@ def isValidSubsequence(array, sequence):
 ### Complexity Analysis: 
 1. Time Complexity: O(n) -> main array + O(n) -> sub-array = ```O(2n) ~ O(n)``` where 'n' is the size of the main array
 2. Space Complexity: ```O(1)``` for counter variable
+
+## Key Takeaway
+In case of checking for a subsequence array, maintain a counter variable and compare the elements of the main aarray with the subsequence array simultaneously.
