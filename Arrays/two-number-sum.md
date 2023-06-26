@@ -45,7 +45,10 @@ def twoNumberSum(array, targetSum):
       return [x, hashtable[x]]
   return []
 ```
-
 ### Complexity Analysis:
 1. Time Complexity: O(n) * O(1) = ```O(n)``` where 'n' is the size of the array.
 2. Space Complexity: ```O(n)``` due to hashtable initialization.
+
+## Key Takeaways
+1. Use a mathematical-based logic instead of brute-force in 'number sum' sort of questions.
+2. Searching in a dictionary/hashtable takes up constant time complexity as opposed to searching in a list/array.
