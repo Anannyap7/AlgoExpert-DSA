@@ -58,6 +58,6 @@ def tournamentWinner(competitions, results):
   return keys[values.index(max(values))]
 ```
 
-# Complexity Analysis:
+### Complexity Analysis:
 1. Time Complexity: O(n) + O(1) = ```O(n)``` where 'n' is the size of the ```results``` array.
 2. Space Complexity: space occupied by dict + list of keys + list of values = O(n) + O(n) + O(n) = O(3n) ~ ```O(n)```.
