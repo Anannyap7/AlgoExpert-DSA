@@ -101,6 +101,6 @@ def nonConstructibleChange(coins):
 1. Time Complexity: O(n) + O(nlogn) = ```O(nlogn)``` -> looping through given array + timsort.
 2. Space Complexity: ```O(1)```
 
-### Key Takeaway:
+## Key Takeaway:
 1. In case you don't know how to approach such questions, it is best to sort the the array first and see what that looks like.
 2. Take small sized arrays and experiment with one of the numbers to see where certain conditions of the problem statement are broken. In this case [1,2,5] would violate the construction of change=4. That wont have been the case for any number less than 5 as the third element in this array. By doing this, try to play out the mathematical reasoning (and logical intuition behind why its working) through the equation that would fit.
