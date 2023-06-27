@@ -1,4 +1,4 @@
-# Non-COnstructible Change
+# Non-Constructible Change
 
 ## Understanding the problem
 
