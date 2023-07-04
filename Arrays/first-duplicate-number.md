@@ -44,7 +44,7 @@ Simply make the element at position ```value-1``` negative. This is a way of fla
 
 ### Algorithm:
 1. Iterate through the array elements.
-2. Inside the loop, assign ``index``` as the absolute value of current value of the element - 1. This is done so that if an element is made negative, it would not affect the indexing.
+2. Inside the loop, assign ```index``` as the absolute value of current value of the element - 1 (```abs(array[i]-1)```). This is done so that if an element is made negative, it would not affect the indexing.
 3. Access the value at the index of the current element and make it negative in case the element at that position is positive.
 4. If the value at that index is already negative, this means that we have already encountered the current element and it is a duplicate.
 5. Return the absolute value of that duplicate (as it may have been made negative when some other element accessed its index).
