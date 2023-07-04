@@ -9,6 +9,18 @@ than ```dinput[i]``` .
 
 **[Note that you're expected to solve this problem without using division.]** - This is an easy method with O(n) time complexity
 
+```
+Sample Input:
+array = [5, 1, 4, 2]
+
+Sample Output:
+[8, 40, 10, 20]
+// 8 = 1 x 4 x 2
+// 40 = 5 x 2 x 4
+// 10 = 5 x 1 x 2
+// 20 = 5 x 1 x 4
+```
+
 ## Approach-1: Brute-Force Approach
 This approach is the first that comes to our mind. Take two pointers/iterators and while the multiply all elements at the second pointer which are not in the same
 position as the first pointer. However, this method results in O(N^2) time complexity as for every element (n), the second pointer iterates through the array (n-1) times.
