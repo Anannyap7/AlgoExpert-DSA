@@ -47,7 +47,7 @@ Let's divide this problem into 3 parts:
 3. Iterate through the array.
 4. If the current element is 0, increment the ```count``` and compare it with ```maxCount``` in order to assign the maximum value among the two to maxCount. This is done to keep track of the range with the most 0s.
 5. In case the current element is not 0, assign ```count=0``` to stop tracking once the subsequent 0s stop.
-6. While assigning ```maxCount```, keep a track of the start and end positions of the range. The ```endPosition``` would be the position of the iterator at the end of the range. The ```startPosition`` would be the difference of the endPosition and the count of 0s + 1.
+6. While assigning ```maxCount```, keep a track of the start and end positions of the range. The ```endPosition``` would be the position of the iterator at the end of the range. The ```startPosition``` would be the difference of the endPosition and the count of 0s + 1.
 7. At the end of the loop, find the middlemost seat (```bestSeat```) by calculating the average or mean of the start and end positions.
 
 ### Python Implementation:
