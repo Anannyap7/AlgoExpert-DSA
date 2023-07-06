@@ -29,7 +29,7 @@ If sum(a[0] to a[x]] = value and sum(a[0] to a[y]) = same value,
 then sum(a[0] to a[x]) - sum(a[0] to a[y]) = 0
 meaning, sum(a[0] to a[x]) + = sum(a[0] to a[y])
 ```
-So, if the current sum found is already present in the set, this means that there is a 0 sum in the array.
+**[So, if the current sum found is already present in the set, this means that there is a 0 sum in the array.]**
 
 ### Algorithm:
 1. Initialize a ```sumSet``` which contains 1 element initially (```0```). This is done just in case ```nums``` contains 0 or consecutive numbers add up to 0.
