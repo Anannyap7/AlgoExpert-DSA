@@ -46,7 +46,7 @@ Now how do we map this logic to find 2 missing numbers instead of 1?
 * <ins>FACT: If you take the average of the 2 missing numbers, 1 missing number would be greater than the average and 1 would be less.</ins>
   * ```average = (expectedSum - numSum)//2```
   * Divide the expected array based on the average found into ```two halves```. One of the numbers would be on the left (less than average) and one on the right (more than average)
-* [Since we know that there is one missing number on each side of the expected array, we can treat each of the halves (left and right) as its own problem of finding a missing number]
+* <ins>Since we know that there is one missing number on each side of the expected array, we can treat each of the halves (left and right) as its own problem of finding a missing number</ins>
   * Add numbers less than the average (to the left of the avg) and greater than the average (to the right of the avg) for the expected array: ```leftExpectedSum``` and ```rightExpectedSum```.
   * Repeat the same for the input array: ```leftNumSum``` and ```rightNumSum```.
   * Take the left and right ```difference``` of the expected and input array to find the 2 missing numbers: ```num1``` and ```num2```.
@@ -96,10 +96,10 @@ def missingNumbers(nums):
 2. Space Complexity = ```O(1)``` as we are only returning a fixed array of size 2 and not using any additional space of size 'n'.
 
 ## Approach-2: Optimized Approach-2
-This approach uses bitwise operators and their logic. [The idea is to XOR the input array and the expected range to eliminate same values and find the resulting XOR
-of both the missing values as ```resultXOR```].
-Now, how do we find the missing values from their combination XOR? [The idea used here is that bit would be set in one of the missing numbers and not the other].
-* Find the rightmost ```setBit``` [(digit 1 in brinary representation is known as set bit)] of ```resultXOR```. This gives us a setBit at a particular position.
+This approach uses bitwise operators and their logic. <ins>The idea is to XOR the input array and the expected range to eliminate same values and find the resulting XOR
+of both the missing values as ```resultXOR```.</ins>
+Now, how do we find the missing values from their combination XOR? <ins>The idea used here is that bit would be set in one of the missing numbers and not the other.</ins>
+* Find the rightmost ```setBit``` <ins>(digit 1 in brinary representation is known as set bit)</ins> of ```resultXOR```. This gives us a setBit at a particular position.
   * This is done by: ```resultXOR``` AND ```2's complement of resultXOR```.
 * Check whether this ```setBit``` is present in the correct position in the input and expected array.
   * This is done by taking the AND of a number from the expected array/input array with the set bit.
