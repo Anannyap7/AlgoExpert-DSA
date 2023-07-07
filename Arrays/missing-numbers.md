@@ -43,7 +43,7 @@ def missingNumbers(nums):
 ## Approach-2: Optimized Approach-1
 To efficiently find a [single] missing number you can take the ```difference``` of the sum of the input array and the sum of the expected array (range(1,n)).
 Now how do we map this logic to find 2 missing numbers instead of 1?
-* [FACT: If you take the average of the 2 missing numbers, 1 missing number would be greater than the average and 1 would be less.]
+* <ins>FACT: If you take the average of the 2 missing numbers, 1 missing number would be greater than the average and 1 would be less.</ins>
   * ```average = (expectedSum - numSum)//2```
   * Divide the expected array based on the average found into ```two halves```. One of the numbers would be on the left (less than average) and one on the right (more than average)
 * [Since we know that there is one missing number on each side of the expected array, we can treat each of the halves (left and right) as its own problem of finding a missing number]
