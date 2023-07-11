@@ -68,7 +68,7 @@ def majorityElement(array):
 ```
 
 ### Example-based Understanding:
-1. Sample Input: array = [1,2,3,2,2,1,2]
+Sample Input: array = [1,2,3,2,2,1,2]
 ```
 STEP-1:
 -> Initially, majority = 1, count = 1
