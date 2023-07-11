@@ -101,3 +101,4 @@ Similar steps can be followed for all kinds of input arrays (Eg: [1,1,1,2,2,2,2]
 2. Space Complexity = ```O(1)``` as we avoided the use of any additional data structures.
 
 ## Optimized Approach - 2
+Finding the most common bit values for each of the 3 bits (or 32 bits) representing the numbers.
