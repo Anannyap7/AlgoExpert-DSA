@@ -34,7 +34,7 @@ Sample Output:
   * If the ```count``` is 0, this means that in the sub-array from the majority element to the current element, there was no majority.
   * Assign the ```majority``` element to the 1st element in the next sub-array and continue the process.
   * Once the loop is over, If the ```count``` is greater than or equal to 1, this means that a majority element is found.
-  * This works cause after all increments and decrements, the majority element constitutes for more than half of the array, so the count would always be greater than or equal to 1.
+  * <ins>This works cause after all increments and decrements, the majority element constitutes for more than half of the array, so the count would always be greater than or equal to 1.</ins>
 * Keep in mind:
   * Since the majority element is present in more than half of the array, it can end up as the last element or 2 or more of it's occurences can appear next to each other.
   * If it ends up as the sole last element without any consecutive occurence to the left of it, the sole element itself forms a subarray and thus it is a majority in that.
