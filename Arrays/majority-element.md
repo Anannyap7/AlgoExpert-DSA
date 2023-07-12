@@ -108,7 +108,7 @@ This approach uses <ins>bitwise operators</ins>. **The logic here is that we are
 This is better explained with the help of an example: Sample Input = [1,2,3,2,2,1,2]
 
 ### Explanation
--> Start iterating from 0 to 32 as an integer is usually 32 bits long.
+Start iterating from 0 to 32 as an integer is usually 32 bits long.
 
 **VARIABLES:**
 *  ```currentBit``` : Index of each bit of an array element starting.
@@ -178,3 +178,8 @@ def majorityElement(array):
 ### Complexity Analysis:
 1. Time Complexity = O(32*n) ~ ```O(n)``` as given in the code.
 2. Space Complexity = ```O(1)``` as there are no additional data structures used.
+
+## Key Takeaways:
+1. Divide a complex problem into smaller sets of problems and analyse it. Here, we checked the presence of a majority element in small sub-arrays.
+2. Try to think of using bitwise operations as a viable approach even though it might seem daunting.
+3. You can check whether there is a copy of an element using the ``setBit``` concept.
