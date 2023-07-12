@@ -40,7 +40,7 @@ def missingNumbers(nums):
 1. Time Complexity: ```O(n)``` as we loop through input array of size 'n' once.
 2. Space Complexity: ```O(n)``` due to storing of input array into set.
 
-## Approach-2: Optimized Approach-1
+## Optimized Approach-1
 To efficiently find a [single] missing number you can take the ```difference``` of the sum of the input array and the sum of the expected array (range(1,n)).
 Now how do we map this logic to find 2 missing numbers instead of 1?
 * <ins>FACT: If you take the average of the 2 missing numbers, 1 missing number would be greater than the average and 1 would be less.</ins>
@@ -95,7 +95,7 @@ def missingNumbers(nums):
 1. Time Complexity = ```O(n)``` as seen in the code.
 2. Space Complexity = ```O(1)``` as we are only returning a fixed array of size 2 and not using any additional space of size 'n'.
 
-## Approach-2: Optimized Approach-2
+## Optimized Approach-2
 This approach uses bitwise operators and their logic. <ins>The idea is to XOR the input array and the expected range to eliminate same values and find the resulting XOR
 of both the missing values as ```resultXOR```.</ins>
 Now, how do we find the missing values from their combination XOR? <ins>The idea used here is that bit would be set in one of the missing numbers and not the other.</ins>
@@ -168,3 +168,9 @@ def missingNumbers(nums):
 ### Complexity Analysis:
 1. Time Complexity: ```O(n)``` as seen in code.
 2. Space Complexity = ```O(1)``` as we are only returning a fixed array of size 2 and not using any additional space of size 'n'.
+
+## Key Takeaways:
+1. If there is an array of ```2``` missing numbers from range ```1 to len(array)+2```, the ```average``` of the 2 missing numbers will have the property that, 1 missing number would be greater than the average and 1 would be less.
+2. Given ```2``` missing elements from an array of elements ranging from ```1 to len(array)+2```, one of them will have a ```setBit``` at the position where the ```XOR``` of these 2 numbers have a setBit and one will not.
+3. Use ```XOR``` to eliminate copy of an element.
+## 
