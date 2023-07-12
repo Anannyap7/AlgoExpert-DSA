@@ -101,7 +101,7 @@ of both the missing values as ```resultXOR```.</ins>
 Now, how do we find the missing values from their combination XOR? <ins>The idea used here is that bit would be set in one of the missing numbers and not the other.</ins>
 * Find the rightmost ```setBit``` <ins>(digit 1 in brinary representation is known as set bit)</ins> of ```resultXOR```. This gives us a setBit at a particular position.
   * This is done by: ```resultXOR``` AND ```2's complement of resultXOR```.
-* Check whether this ```setBit``` is present in the correct position in the input and expected array.
+* Check whether this ```setBit``` is present in the correct position (<ins>rightmost position</ins>) in the input and expected array.
   * This is done by taking the AND of a number from the expected array/input array with the set bit.
   * If the set bit is present, take the XOR of the values from the input array and expected range to find ```missing number 1```.
   * If not, perform the same operation for input and expected values which do not have the set bit to find ```missing number 2```.
@@ -117,7 +117,7 @@ All the calculations will be done on decimals itself due to integer type of inpu
 
 1. resultXOR = 1^2^3^4^5^1^4^3 = same elements get cancelled out (XOR rule) and we are left with 2^5 = 0010 ^ 0101 = 0111
 2. setBit = 0111 & -(0111) = 0111 & 1001 = 0001 -> rightmost set bit = 1
-3. Check whether set bit 1 is present at position 3 of any of the input and expected elements. If set bit is present, i & setBit != 0.
+3. Check whether set bit 1 is present at position 3 or rightmost position of any of the input and expected elements. If set bit is present, i & setBit != 0.
 4. Elements with set bit at position 3: 1 (0001 & 0001 = 1111), 3 (0011 & 0001 = 1101) and 5(0101 & 0001 = 1011) -> the outputs have 1 at position 3.
 4. Thus, 1^3^5^1^3 (expected and input elements) = 5 -> one of the missing values.
 5. Elements with no set bit at position 3: 2 (0010 & 0001 = 1100) and 4 (0100 & 0001 = 1010) -> the outputs don't have 1 at position 3
